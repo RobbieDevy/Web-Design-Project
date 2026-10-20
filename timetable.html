@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Three Rock Kenpo Timetable</title>
+  <link rel="icon" type="image/x-icon" href="Images/ThreeRockLogo.jfif">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="timetable.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav id="navbar">
+            <img src="Images/ThreeRockLogo.jfif" class="logo">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="articles.html">Our Members</a></li>
+                <li><a href="timetable.html">Timetable</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="information.html">Information</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <h2 class="section-title">Weekly Training Timetable</h2>
+            <p>Here is our weekly training schedule. If you have any questions, please contact Finn through the details on the Information page.</p>
+            <div id="timetable"></div>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <h3 id="modal-title"></h3>
+                <p><strong>Time:</strong> <span id="modal-time"></span></p>
+                <p><strong>Description:</strong> <span id="modal-description"></span></p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Three Rock Kenpo Karate</h3>
+                    <p>Established 2009</p>
+                    <p>Teaching traditional Kenpo Karate in South Dublin</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Head Instructor: Finn Ryan</p>
+                    <p>Phone: 086-859-5762</p>
+                    <p>Email: Finn.trk@outlook.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>Gaelscoil Thaobh na Coille</p>
+                    <p>Belarmine Vale, Dublin 18</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/threerockmartialarts/">Facebook</a>
+                        <a href="https://www.instagram.com/threerockkenpo/?hl=en">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2009-2025 Three Rock Kenpo Karate. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="timetable.js"></script>
+    <script>
+        const trainingData = {
+            Monday: [
+                { time: "19:00", title: "Dojo Training", description: "Training for brown and black belts." },
+            ],
+            Tuesday: [
+                { time: "19:00", title: "Junior Class", description: "Training for children under 12." },
+                { time: "20:00", title: "Senior Class", description: "Training for anyone over 12." },
+            ],
+            Thursday: [
+                { time: "19:00", title: "Junior Class", description: "Training for children under 12." },
+                { time: "20:00", title: "Senior Class", description: "Training for anyone over 12." },
+            ],
+            Saturday: [
+                { time: "10:00", title: "Black Belt Training", description: "Training for all black belts."},
+            ]
+        };
+
+        function showModal(session) {
+            document.getElementById("modal-title").textContent = session.title;
+            document.getElementById("modal-time").textContent = session.time;
+            document.getElementById("modal-description").textContent = session.description || "No description available.";
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        createTimetable("timetable", trainingData);
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box; /* makes sure padding and border are included in element's total width */
+}
+
+body, html {
+    margin: 0; /* removes default margin from body and html */
+    padding: 0; /* removes default padding from body and html */
+    width: 100%; /* makes body and html take up full width of viewport */
+    overflow-x: hidden; /* prevents horizontal scrolling */
+}
+
+h1, h2 {
+    font-family: 'Oswald'; /* sets the font for all h1 and h2 elements to Oswald */
+}
+
+body, p {
+    font-family: 'Open Sans'; /* sets the font for body and p elements to Open Sans */
+}
+
+nav {
+    padding: 0; /* removes padding from nav */
+    margin: 0; /* removes margin from nav */
+    background: #000000; /* sets nav background color to black */
+    display: flex; /* flex layout */
+    align-items: center; /* centers items vertically in the nav */
+    padding: 10px; /* adds padding around nav content */
+    height: 90px; /* sets a fixed height for the nav */
+    position: sticky; /* makes nav stick to top when scrolling */
+    top: 0; /* positions the sticky nav at the top of viewport */
+    z-index: 1000; /* ensures nav appears above other elements */
+    transition: opacity 0.3s ease; /* adds smooth transition effect when opacity changes */
+}
+
+nav ul {
+    display: flex; /* makes list items arrange horizontally */
+    list-style-type: none; /* removes bullet points from list */
+    justify-content: flex-end; /* pushes list items to the right */
+    margin-left: auto; /* pushes list to the right side of nav */
+    gap: 20px; /* adds space between list items */
+}
+
+nav ul li a {
+    color: white; /* sets link text color to white */
+    text-decoration: none; /* removes underline from links */
+    padding: 10px 15px; /* adds space around link text */
+    text-transform: uppercase; /* makes link text all capitals */
+    font-weight: bold; /* makes link text bold */
+}
+
+nav ul li a:hover {
+    background-color: red; /* changes background color when hovering over links */
+}
+
+.logo {
+    margin-left: 25px; /* adds margin to the left of the logo */
+    height: 100%; /* makes logo take full height of its container */
+    height: 90px; /* sets a specific height for the logo */
+    object-fit: contain; /* maintains logo aspect ratio while fitting within dimensions */
+}
+
+.hero-section {
+    position: relative; /* enables absolute positioning for children */
+    width: 100%; /* makes hero section take full width */
+    height: 80vh; /* makes hero section take 80% of viewport height */
+    overflow: hidden; /* hides any content that exceeds the section's dimensions */
+}
+
+.hero-background {
+    width: 100%; /* makes background image take full width */
+    height: 100%; /* makes background image take full height */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('Images/trkbackground.jpg'); /* sets the background image */
+    background-size: cover; /* scales background image to cover entire element */
+    background-position: center; /* centers the background image */
+    position: absolute; /* takes this element out of normal document flow */
+    top: 0; /* positions the background at the top of its container */
+    left: 0; /* positions the background at the left of its container */
+    filter: brightness(0.8); /* makes background image slightly darker */
+}
+
+.hero-content {
+    position: absolute; /* takes this element out of normal document flow */
+    width: 100%; /* makes content take full width */
+    height: 100%; /* makes content take full height */
+    display: flex; /* flex layout */
+    flex-direction: column; /* stacks children vertically */
+    justify-content: center; /* centers children vertically */
+    align-items: center; /* centers children horizontally */
+    color: white; /* sets text color to white */
+    text-align: center; /* centers text horizontally */
+    z-index: 2; /* places content above the background image */
+}
+
+.hero-content h1 {
+    font-family: 'Oswald', sans-serif; /* sets font to Oswald */
+    font-size: 3.5rem; /* sets text size to 3.5 times the root font size */
+    font-weight: 700; /* sets font weight to bold */
+    margin-bottom: 20px; /* adds space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* adds shadow to text for better visibility */
+}
+
+.hero-content p {
+    font-size: 1.2rem; /* sets paragraph text size */
+    max-width: 800px; /* limits paragraph width */
+    margin: 0 auto 30px; /* centers paragraph horizontally with bottom margin */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* adds shadow to text for better visibility */
+}
+
+/* Content section styling */
+.main-content {
+    padding: 60px 5%; /* adds padding to top/bottom and left/right */
+    display: flex; /* flex layout */
+    flex-direction: column; /* stacks children vertically */
+    max-width: 1200px; /* limits maximum width */
+    margin: 0 auto; /* centers content horizontally */
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif; /* sets font to Oswald */
+    font-size: 2rem; /* sets text size */
+    margin-bottom: 30px; /* adds space below the title */
+    color: #000; /* sets text color to black */
+    position: relative; /* enables absolute positioning for pseudo-elements */
+    padding-bottom: 10px; /* adds padding below the text */
+}
+
+.section-title::after {
+    content: ''; /* required for the pseudo-element to display */
+    position: absolute; /* takes this element out of normal document flow */
+    bottom: 0; /* positions the line at the bottom of the title */
+    left: 0; /* aligns the line with the left edge of the title */
+    width: 80px; /* sets the width of the line */
+    height: 3px; /* sets the height/thickness of the line */
+    background-color: #da0000; /* sets the line color to red */
+}
+
+footer {
+    background-color: #000000; /* sets dark background color for footer */
+    color: #fff; /* makes text white */
+    padding: 40px 0 20px; /* adds space above and below content */
+    margin-top: 50px; /* creates space between footer and content above */
+    width: 100%; /* makes footer full width */
+}
+
+.footer-container {
+    display: flex; /* creates flexible container */
+    flex-wrap: wrap; /* allows sections to wrap to next line on smaller screens */
+    justify-content: space-between; /* distributes space evenly between sections */
+    max-width: 1200px; /* limits maximum width */
+    margin: 0 auto; /* centers the container */
+    padding: 0 20px; /* adds horizontal padding */
+}
+
+.footer-section {
+    flex: 1; /* makes sections grow equally */
+    min-width: 200px; /* ensures minimum width for readability */
+    margin-bottom: 30px; /* adds space below each section */
+    padding: 0 15px; /* adds horizontal padding inside sections */
+}
+
+.footer-section h3 {
+    font-family: 'Oswald', sans-serif; /* sets headline font */
+    font-size: 1.2rem; /* sets font size */
+    margin-bottom: 15px; /* adds space below headings */
+    color: #da0000; /* makes headings red */
+    border-bottom: 1px solid #444; /* adds subtle divider line */
+    padding-bottom: 8px; /* adds space between text and border */
+}
+
+.footer-section p {
+    margin: 8px 0; /* adds vertical spacing between paragraphs */
+    font-size: 0.9rem; /* makes text slightly smaller */
+    line-height: 1.4; /* increases line height for readability */
+}
+
+.footer-social {
+    display: flex; /* creates flexible container for social links */
+    gap: 15px; /* adds space between social links */
+    margin-top: 10px; /* adds space above social links */
+}
+
+.footer-social a {
+    color: #fff; /* makes links white */
+    text-decoration: none; /* removes underlines */
+    transition: color 0.3s; /* animates color changes */
+}
+
+.footer-social a:hover {
+    color: #da0000; /* turns links red on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* centers copyright text */
+    margin-top: 20px; /* adds space above copyright section */
+    padding-top: 20px; /* adds padding above copyright text */
+    border-top: 1px solid #444; /* adds divider above copyright */
+    font-size: 0.8rem; /* makes copyright text smaller */
+}
+
+/* mobile adjustments */
+@media only screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem; /* reduces heading size on medium screens */
+    }
+    
+    .hero-content p {
+        font-size: 1rem; /* reduces paragraph size on medium screens */
+        padding: 0 20px; /* adds horizontal padding to paragraphs */
+    }
+    
+    .hero-section {
+        height: 60vh; /* reduces hero section height on medium screens */
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .hero-content h1 {
+        font-size: 1.8rem; /* further reduces heading size on small screens */
+    }
+    
+    .hero-section {
+        height: 50vh; /* further reduces hero section height on small screens */
+    }
+}

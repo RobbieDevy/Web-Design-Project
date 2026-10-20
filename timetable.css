@@ -1,0 +1,115 @@
+#timetable {
+  display: flex; /* Changes from grid to flex layout */
+  flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+  gap: 1.5rem; /* Creates spacing between timetable columns */
+  margin-top: 2rem; /* Adds space above the timetable */
+}
+
+.day-column {
+  font-family: "Oswald", sans-serif; /* Sets font for day column content */
+  background-color: #fff; /* Sets day column background to white */
+  border-radius: 0.75rem; /* Adds rounded corners to day columns */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+  padding: 1rem; /* Adds space inside day columns */
+  transition: transform 0.3s; /* Creates smooth hover animation */
+  flex: 1; /* Makes columns share space equally */
+  min-width: 200px; /* Sets minimum width for columns before wrapping */
+}
+
+.day-column:hover {
+  transform: translateY(-5px); /* Lifts column slightly when hovered */
+}
+
+.day-column h2 {
+  font-family: 'Oswald', sans-serif; /* Sets heading font */
+  font-size: 1.25rem; /* Sets heading size */
+  margin-bottom: 1rem; /* Adds space below heading */
+  color: #2c3e50; /* Sets heading text color */
+  border-bottom: 2px solid #da0000; /* Adds red line below heading */
+  padding-bottom: 10px; /* Adds space between text and bottom border */
+}
+
+.session {
+  background-color: #f9f9f9; /* Sets light background for session blocks */
+  padding: 0.75rem; /* Adds space inside session blocks */
+  border-radius: 0.75rem; /* Adds rounded corners to session blocks */
+  margin-bottom: 0.75rem; /* Adds space between session blocks */
+  cursor: pointer; /* Changes cursor to hand when hovering over sessions */
+  transition: background 0.3s; /* Creates smooth background color transition */
+  border-left: 3px solid #da0000; /* Adds red accent line to left side */
+  display: flex; /* Uses flex layout for session content */
+  flex-direction: column; /* Stacks session content vertically */
+}
+
+.session:hover {
+  background-color: #f0f0f0; /* Darkens session block slightly when hovered */
+}
+
+.session-time {
+  font-family: 'Open Sans', sans-serif; /* Sets font for time display */
+  font-weight: 600; /* Makes time text semi-bold */
+  color: #000000; /* Sets time text color to black */
+}
+
+.session-title {
+  font-family: 'Open Sans', sans-serif; /* Sets font for session title */
+  margin: 0.25rem 0; /* Adds small vertical margins */
+  font-size: 1rem; /* Sets title text size */
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed; /* Fixes modal position regardless of scrolling */
+  top: 0; /* Positions modal at top of viewport */
+  left: 0; /* Positions modal at left of viewport */
+  width: 100vw; /* Makes modal take full viewport width */
+  height: 100vh; /* Makes modal take full viewport height */
+  background-color: rgba(0, 0, 0, 0.5); /* Adds semi-transparent dark background */
+  display: flex; /* Uses flex for centering modal content */
+  align-items: center; /* Centers modal vertically */
+  justify-content: center; /* Centers modal horizontally */
+  z-index: 999; /* Ensures modal appears above other content */
+  display: none; /* Hides modal by default */
+}
+
+.modal-content {
+  background-color: #fff; /* Sets modal background to white */
+  padding: 2rem; /* Adds space inside modal */
+  border-radius: 1rem; /* Adds rounded corners to modal */
+  max-width: 400px; /* Limits modal width */
+  width: 90%; /* Makes modal take 90% of available width up to max-width */
+  text-align: center; /* Centers text inside modal */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+  position: relative; /* Enables absolute positioning for close button */
+  display: flex; /* Uses flex layout for modal content */
+  flex-direction: column; /* Stacks modal content vertically */
+}
+
+.modal-content h3 {
+  margin-top: 0; /* Removes top margin from modal heading */
+  font-family: 'Oswald', sans-serif; /* Sets modal heading font */
+  border-bottom: 2px solid #da0000; /* Adds red line below modal heading */
+  padding-bottom: 10px; /* Adds space between text and bottom border */
+}
+
+.modal-close {
+  position: absolute; /* Takes close button out of normal flow */
+  top: 1rem; /* Positions close button near top of modal */
+  right: 1rem; /* Positions close button near right of modal */
+  cursor: pointer; /* Changes cursor to hand when hovering */
+  font-size: 1.2rem; /* Sets close button text size */
+  color: #777; /* Sets close button color to gray */
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 768px) {
+  .day-column {
+    flex-basis: calc(50% - 1.5rem); /* Makes columns take up roughly half the width minus gap on medium screens */
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .day-column {
+    flex-basis: 100%; /* Makes columns take full width on small screens */
+  }
+}

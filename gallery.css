@@ -1,0 +1,160 @@
+.gallery-hero-section {
+    position: relative; /* sets positioning context for absolute elements */
+    width: 100%; /* makes the hero section full width */
+    height: 40vh; /* sets height to 40% of viewport height */
+    overflow: hidden; /* hides any content that exceeds the container */
+}
+
+.gallery-hero-background {
+    width: 100%; /* makes the background full width */
+    height: 100%; /* makes the background full height */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/trkbackground.jpg'); /* adds dark overlay on background image */
+    background-size: cover; /* makes background image cover the container */
+    background-position: center; /* centers the background image */
+    position: absolute; /* takes this out of normal flow */
+    top: 0; /* positions at the top */
+    left: 0; /* positions at the left */
+}
+
+.gallery-hero-content {
+    position: absolute; /* takes this out of normal flow */
+    width: 100%; /* makes content full width */
+    height: 100%; /* makes content full height */
+    display: flex; /* creates a flexible container */
+    flex-direction: column; /* stacks children vertically */
+    justify-content: center; /* centers children vertically */
+    align-items: center; /* centers children horizontally */
+    color: white; /* sets text color to white */
+    text-align: center; /* centers text alignment */
+    z-index: 2; /* places content above background */
+}
+
+.gallery-hero-content h1 {
+    font-family: 'Oswald', sans-serif; /* sets font to Oswald */
+    font-size: 3rem; /* sets font size to 3rem (48px) */
+    font-weight: 700; /* makes font bold */
+    margin-bottom: 20px; /* adds space below heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* adds shadow for better readability */
+}
+
+.gallery-hero-content p {
+    font-size: 1.2rem; /* sets paragraph font size */
+    max-width: 800px; /* limits paragraph width */
+    margin: 0 auto; /* centers the paragraph */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* adds shadow for better readability */
+}
+
+/* gallery grid layout */
+.gallery-container {
+    display: grid; /* creates a grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* creates responsive grid columns */
+    gap: 20px; /* sets spacing between grid items */
+    margin: 30px 0; /* adds margin to top and bottom */
+}
+
+.gallery-item {
+    position: relative; /* sets positioning context for caption */
+    overflow: hidden; /* hides overflow for hover effects */
+    border-radius: 8px; /* rounds corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* adds subtle shadow */
+    transition: transform 0.3s ease; /* animates transformation */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* moves item up 5px on hover */
+}
+
+.gallery-item img {
+    width: 100%; /* makes image full width of container */
+    height: 300px; /* sets fixed height */
+    object-fit: cover; /* makes image cover container while maintaining aspect ratio */
+    display: block; /* removes extra space below image */
+    transition: transform 0.3s ease; /* animates transformation */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* slightly enlarges image on hover */
+}
+
+.gallery-caption {
+    position: absolute; /* takes out of normal flow */
+    bottom: 0; /* positions at bottom */
+    left: 0; /* positions at left */
+    right: 0; /* spans full width */
+    padding: 15px; /* adds padding around text */
+    background: rgba(0, 0, 0, 0.7); /* adds semi-transparent black background */
+    color: white; /* sets text color to white */
+    font-family: 'Open Sans', sans-serif; /* sets font */
+    font-size: 0.9rem; /* sets font size */
+    transform: translateY(100%); /* initially hides caption below image */
+    transition: transform 0.3s ease; /* animates transformation */
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0); /* shows caption on hover */
+}
+
+/* contact section */
+.gallery-contact {
+    background-color: #f9f9f9; /* sets light gray background */
+    padding: 30px; /* adds padding around content */
+    border-radius: 8px; /* rounds corners */
+    margin: 40px 0; /* adds margin to top and bottom */
+    text-align: center; /* centers text */
+}
+
+.gallery-contact h3 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    margin-bottom: 15px; /* adds space below heading */
+    color: #333; /* sets dark gray text color */
+}
+
+.gallery-contact p {
+    font-family: 'Open Sans', sans-serif; /* sets font */
+    line-height: 1.6; /* increases line spacing */
+    max-width: 600px; /* limits paragraph width */
+    margin: 0 auto; /* centers the paragraph */
+}
+
+/* mobile responsiveness */
+@media only screen and (max-width: 768px) {
+    .gallery-hero-content h1 {
+        font-size: 2.2rem; /* reduces heading size on medium screens */
+    }
+    
+    .gallery-hero-content p {
+        font-size: 1rem; /* reduces paragraph size on medium screens */
+        padding: 0 20px; /* adds horizontal padding */
+    }
+    
+    .gallery-hero-section {
+        height: 30vh; /* reduces hero height on medium screens */
+    }
+    
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* adjusts grid for medium screens */
+        gap: 15px; /* reduces gap between items */
+    }
+    
+    .category-buttons {
+        justify-content: center; /* centers category buttons */
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .gallery-hero-content h1 {
+        font-size: 1.8rem; /* further reduces heading size on small screens */
+    }
+    
+    .gallery-hero-section {
+        height: 25vh; /* further reduces hero height on small screens */
+    }
+    
+    .gallery-item img {
+        height: 250px; /* reduces image height on small screens */
+    }
+    
+    .gallery-container {
+        grid-template-columns: 1fr; /* makes one column layout on small screens */
+    }
+}

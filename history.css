@@ -1,0 +1,196 @@
+.history-hero-section {
+    position: relative; /* creates positioning context for absolute elements */
+    width: 100%; /* makes section full width */
+    height: 40vh; /* sets height to 40% of viewport height */
+    overflow: hidden; /* hides content overflowing the container */
+}
+
+.history-hero-background {
+    width: 100%; /* makes background full width */
+    height: 100%; /* makes background full height */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/trkbackground.jpg'); /* adds dark overlay to background image */
+    background-size: cover; /* makes image cover container */
+    background-position: center; /* centers the background image */
+    position: absolute; /* takes out of normal flow */
+    top: 0; /* positions at top */
+    left: 0; /* positions at left */
+}
+
+.history-hero-content {
+    position: absolute; /* takes out of normal flow */
+    width: 100%; /* makes content full width */
+    height: 100%; /* makes content full height */
+    display: flex; /* creates flexible container */
+    flex-direction: column; /* stacks children vertically */
+    justify-content: center; /* centers content vertically */
+    align-items: center; /* centers content horizontally */
+    color: white; /* sets text color to white */
+    text-align: center; /* centers text alignment */
+    z-index: 2; /* places above background */
+    padding: 20px; /* adds padding around content */
+}
+
+.history-hero-content h1 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    font-size: 3rem; /* sets font size */
+    font-weight: 700; /* makes font bold */
+    margin-bottom: 20px; /* adds space below heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* adds shadow for readability */
+}
+
+.history-hero-content p {
+    font-size: 1.2rem; /* sets font size */
+    font-family: 'Open Sans', sans-serif; /* sets font */
+    max-width: 800px; /* limits paragraph width */
+    margin: 0 auto; /* centers paragraph */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* adds shadow for readability */
+}
+
+/* timeline styling */
+.history-intro {
+    font-size: 1.1rem; /* sets font size */
+    line-height: 1.6; /* increases line spacing */
+    margin-bottom: 3rem; /* adds space below intro */
+}
+
+.timeline {
+    position: relative; /* creates positioning context */
+    max-width: 900px; /* sets maximum width */
+    margin: 0 auto; /* centers timeline */
+    padding: 40px 0; /* adds vertical padding */
+}
+
+.timeline:before {
+    content: ''; /* required for pseudo-element */
+    position: absolute; /* takes out of normal flow */
+    top: 0; /* positions at top */
+    bottom: 0; /* stretches to bottom */
+    left: 50%; /* centers line */
+    width: 3px; /* sets line width */
+    background: #da0000; /* sets red line color */
+}
+
+.timeline-entry {
+    display: flex; /* creates flexible container */
+    margin-bottom: 60px; /* adds space between entries */
+    position: relative; /* sets positioning context */
+}
+
+.timeline-entry:nth-child(odd) {
+    flex-direction: row-reverse; /* reverses layout for odd entries */
+}
+
+.timeline-date {
+    width: 35%; /* sets date width */
+    padding: 0 30px; /* adds horizontal padding */
+    text-align: right; /* aligns text to right */
+}
+
+.timeline-entry:nth-child(odd) .timeline-date {
+    text-align: left; /* aligns text to left for odd entries */
+}
+
+.timeline-date h3 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    font-weight: 600; /* sets font weight */
+    margin-bottom: 5px; /* adds space below heading */
+    color: #da0000; /* sets red text color */
+}
+
+.timeline-date span {
+    font-family: 'Open Sans', sans-serif; /* sets font */
+    font-size: 0.9rem; /* sets font size */
+    color: #666; /* sets gray text color */
+}
+
+.timeline-content {
+    width: 65%; /* sets content width */
+    padding: 20px 30px; /* adds padding */
+    background: #f9f9f9; /* sets light gray background */
+    border-radius: 5px; /* rounds corners */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* adds subtle shadow */
+    position: relative; /* sets positioning context */
+}
+
+.timeline-content:before {
+    content: ''; /* required for pseudo-element */
+    position: absolute; /* takes out of normal flow */
+    top: 20px; /* positions from top */
+    width: 20px; /* sets marker width */
+    height: 20px; /* sets marker height */
+    background: #da0000; /* sets red marker color */
+    border-radius: 50%; /* makes circle marker */
+}
+
+.timeline-entry:nth-child(odd) .timeline-content:before {
+    left: -10px; /* positions marker for odd entries */
+}
+
+.timeline-entry:nth-child(even) .timeline-content:before {
+    right: -10px; /* positions marker for even entries */
+}
+
+.timeline-content h4 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    margin-top: 0; /* removes top margin */
+    margin-bottom: 10px; /* adds space below heading */
+    color: #2c3e50; /* sets dark blue text color */
+}
+
+.timeline-content p {
+    font-family: 'Open Sans', sans-serif; /* sets font */
+    margin: 0; /* removes margin */
+    line-height: 1.6; /* increases line spacing */
+}
+
+/* mobile responsiveness */
+@media only screen and (max-width: 768px) {
+    .history-hero-content h1 {
+        font-size: 2.2rem; /* reduces heading size on medium screens */
+    }
+
+    .timeline:before {
+        left: 30px; /* moves timeline to left on medium screens */
+    }
+
+    .timeline-entry {
+        flex-direction: column; /* stacks elements vertically */
+    }
+
+    .timeline-entry:nth-child(odd) {
+        flex-direction: column; /* stacks elements vertically for odd entries */
+    }
+
+    .timeline-date, 
+    .timeline-entry:nth-child(odd) .timeline-date {
+        width: 100%; /* makes date full width */
+        text-align: left; /* aligns text to left */
+        padding: 0 0 0 60px; /* adjusts padding */
+        margin-bottom: 10px; /* adds space below date */
+    }
+
+    .timeline-content {
+        width: 100%; /* makes content full width */
+        padding: 15px; /* reduces padding */
+    }
+
+    .timeline-content:before,
+    .timeline-entry:nth-child(odd) .timeline-content:before,
+    .timeline-entry:nth-child(even) .timeline-content:before {
+        left: -40px; /* adjusts marker position for all entries */
+    }
+
+    .principle-card {
+        width: 100%; /* makes cards full width */
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .history-hero-content h1 {
+        font-size: 1.8rem; /* further reduces heading size on small screens */
+    }
+    
+    .history-hero {
+        height: 40vh; /* adjusts hero height on small screens */
+    }
+}

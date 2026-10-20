@@ -1,0 +1,205 @@
+.info-hero-section {
+    position: relative; /* creates positioning context for absolute elements */
+    width: 100%; /* makes section full width */
+    height: 40vh; /* sets height to 40% of viewport height */
+    overflow: hidden; /* hides content overflowing the container */
+}
+
+.info-hero-background {
+    width: 100%; /* makes background full width */
+    height: 100%; /* makes background full height */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Images/trkbackground.jpg'); /* adds dark overlay to background image */
+    background-size: cover; /* makes image cover container */
+    background-position: center; /* centers the background image */
+    position: absolute; /* takes out of normal flow */
+    top: 0; /* positions at top */
+    left: 0; /* positions at left */
+}
+
+.info-hero-content {
+    position: absolute; /* takes out of normal flow */
+    width: 100%; /* makes content full width */
+    height: 100%; /* makes content full height */
+    display: flex; /* creates flexible container */
+    flex-direction: column; /* stacks children vertically */
+    justify-content: center; /* centers content vertically */
+    align-items: center; /* centers content horizontally */
+    color: white; /* sets text color to white */
+    text-align: center; /* centers text alignment */
+    z-index: 2; /* places above background */
+}
+
+.info-hero-content h1 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    font-size: 3rem; /* sets font size */
+    font-weight: 700; /* makes font bold */
+    margin-bottom: 20px; /* adds space below heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* adds shadow for readability */
+}
+
+.info-hero-content p {
+    font-size: 1.2rem; /* sets font size */
+    max-width: 800px; /* limits paragraph width */
+    margin: 0 auto; /* centers paragraph */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* adds shadow for readability */
+}
+
+/* information cards styling */
+.info-cards-container {
+    display: flex; /* creates flexible container */
+    flex-wrap: wrap; /* allows wrapping to next line */
+    gap: 30px; /* sets spacing between cards */
+    margin-bottom: 50px; /* adds space below container */
+}
+
+.info-card {
+    flex: 1 1 calc(50% - 30px); /* makes cards take up roughly half the container minus gap */
+    background-color: #fff; /* sets white background */
+    border-radius: 8px; /* rounds corners */
+    overflow: hidden; /* hides content overflowing the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* adds subtle shadow */
+    transition: transform 0.3s ease; /* animates transformation */
+}
+
+.info-card:hover {
+    transform: translateY(-5px); /* moves card up 5px on hover */
+}
+
+.info-card-header {
+    background-color: #000; /* sets black background */
+    color: #fff; /* sets white text */
+    padding: 15px 20px; /* adds padding */
+    border-bottom: 3px solid #da0000; /* adds red bottom border */
+}
+
+.info-card-header h2 {
+    margin: 0; /* removes margin */
+    font-family: 'Oswald', sans-serif; /* sets font */
+    font-size: 1.5rem; /* sets font size */
+}
+
+.info-card-content {
+    padding: 20px; /* adds padding inside card */
+}
+
+.info-card-content p {
+    margin-bottom: 15px; /* adds space below paragraphs */
+    line-height: 1.6; /* increases line spacing */
+}
+
+.info-card-content ul {
+    margin-bottom: 15px; /* adds space below lists */
+    padding-left: 20px; /* adds left padding for list markers */
+}
+
+.info-card-content ul li {
+    margin-bottom: 5px; /* adds space between list items */
+    line-height: 1.6; /* increases line spacing */
+}
+
+.info-card-content .note {
+    font-style: italic; /* makes text italic */
+    font-size: 0.9rem; /* reduces font size */
+    color: #666; /* sets gray text color */
+    margin-top: 15px; /* adds space above notes */
+}
+
+.map-container {
+    margin: 15px 0; /* adds vertical margin */
+    border-radius: 8px; /* rounds corners */
+    overflow: hidden; /* hides content overflowing the container */
+}
+
+.social-links {
+    display: flex; /* creates flexible container */
+    gap: 15px; /* sets spacing between links */
+    margin: 15px 0; /* adds vertical margin */
+}
+
+.social-link {
+    display: inline-block; /* makes link a block element that can have dimensions */
+    padding: 8px 15px; /* adds padding */
+    background-color: #da0000; /* sets red background */
+    color: white; /* sets white text */
+    text-decoration: none; /* removes underline */
+    border-radius: 4px; /* rounds corners */
+    font-weight: 600; /* makes font semi-bold */
+    transition: background-color 0.3s; /* animates background color change */
+}
+
+.social-link:hover {
+    background-color: #b10000; /* darkens background on hover */
+}
+
+/* call to action section */
+.end-section {
+    text-align: center; /* centers text */
+    padding: 50px 0; /* adds vertical padding */
+    background-color: #f9f9f9; /* sets light gray background */
+    border-radius: 8px; /* rounds corners */
+    margin-bottom: 30px; /* adds space below section */
+}
+
+.end-section h2 {
+    font-family: 'Oswald', sans-serif; /* sets font */
+    font-size: 2rem; /* sets font size */
+    margin-bottom: 15px; /* adds space below heading */
+}
+
+.end-section p {
+    text-align: center; /* centers text */
+    font-size: 1.1rem; /* sets font size */
+    max-width: 600px; /* limits paragraph width */
+    margin: 0 auto 25px; /* centers paragraph and adds bottom margin */
+}
+
+.small-text {
+    font-size: 0.9rem; /* reduces font size */
+    margin-top: 15px; /* adds space above text */
+    color: #666; /* sets gray text color */
+}
+
+/* mobile responsiveness */
+@media only screen and (max-width: 992px) {
+    .info-cards-container {
+        flex-direction: column; /* stacks cards vertically on medium screens */
+    }
+    
+    .info-card {
+        flex: 1 1 100%; /* makes cards full width */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .info-hero-content h1 {
+        font-size: 2.2rem; /* reduces heading size on medium screens */
+    }
+    
+    .info-hero-content p {
+        font-size: 1rem; /* reduces paragraph size on medium screens */
+        padding: 0 20px; /* adds horizontal padding */
+    }
+    
+    .info-hero-section {
+        height: 30vh; /* reduces hero height on medium screens */
+    }
+    
+    .cta-section h2 {
+        font-size: 1.7rem; /* reduces heading size on medium screens */
+    }
+    
+    .cta-section p {
+        font-size: 1rem; /* reduces paragraph size on medium screens */
+        padding: 0 20px; /* adds horizontal padding */
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .info-hero-content h1 {
+        font-size: 1.8rem; /* further reduces heading size on small screens */
+    }
+    
+    .info-hero-section {
+        height: 25vh; /* further reduces hero height on small screens */
+    }
+}

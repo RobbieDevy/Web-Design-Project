@@ -1,0 +1,75 @@
+h1 {
+    font-family: 'Oswald', sans-serif; /* sets the font for h1 elements to Oswald with a fallback to any sans-serif font */
+    font-size: x-large; /* makes the h1 text extra large */
+    margin-bottom: 15px; /* adds 15 pixels of space below the h1 element */
+}
+
+.article-section {
+    display: flex; /* creates a flexible container for layout */
+    padding: 40px 0; /* adds 40px padding to the top and bottom, 0px to the sides */
+    border-bottom: 1px solid #e0e0e0; /* creates a light gray line at the bottom of the section */
+    align-items: center; /* vertically centers the content in the container */
+}
+
+/* even sections (image on right) */
+.article-section:nth-child(even) {
+    flex-direction: row; /* makes even sections have image on the right */
+}
+
+/* odd sections (image on left) */
+.article-section:nth-child(odd) {
+    flex-direction: row-reverse; /* makes odd sections have image on the left */
+    background-color: #f9f9f9; /* sets a light gray background for odd sections */
+}
+
+.article-content {
+    flex: 1; /* makes this element take up equal available space */
+    padding: 20px 40px; /* adds 20px top/bottom padding and 40px left/right padding */
+}
+
+.article-image-container {
+    flex: 1; /* makes this element take up equal available space */
+    display: flex; /* makes this a flex container */
+    justify-content: center; /* centers the image horizontally */
+    align-items: center; /* centers the image vertically */
+    padding: 0; /* removes any padding */
+}
+
+.articleimage {
+    max-width: 100%; /* ensures image isn't wider than its container */
+    max-height: 400px; /* sets maximum height of 400px for images */
+    object-fit: cover; /* makes images cover their container while maintaining aspect ratio */
+    padding: 0; /* removes any padding */
+    margin: 0; /* removes any margin */
+}
+
+footer {
+    background: #000000; /* sets footer background to black */
+    padding: 20px 0; /* adds 20px padding to top and bottom, 0px to sides */
+    text-align: center; /* centers the text in the footer */
+    font-size: small; /* makes the footer text small */
+    color: #ffffff; /* sets footer text color to white */
+    width: 100%; /* makes the footer span the full width */
+}
+
+@media only screen and (max-width: 768px) {
+    .article-section, 
+    .article-section:nth-child(even), 
+    .article-section:nth-child(odd) {
+        flex-direction: column; /* stacks elements vertically on smaller screens */
+    }
+    
+    .article-image-container {
+        width: 100%; /* makes image container full width on smaller screens */
+        margin-bottom: 20px; /* adds space below the image container */
+    }
+    
+    .articleimage {
+        max-height: 300px; /* reduces maximum image height on smaller screens */
+        width: 100%; /* makes images take full width of their container */
+    }
+    
+    .article-content {
+        padding: 20px; /* reduces padding on smaller screens */
+    }
+}
